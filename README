@@ -1,0 +1,33 @@
+Scuzzle Scrape!
+
+Zach McArtor
+zmcartor@gmail.com
+
+
+=What?=
+Scuzzle Scrape is a fun little web-scraper that performs analytics and other
+fun operations on remote website content. Scuzzle runs on the Sinatra web framework:
+http://www.sinatrarb.com/
+
+	Current feature list (10/26/2011)
+		Fetch all images from supplied website and rotate 90 degs. This allow easy viewing while in bed.
+
+
+	Future Features
+		natural language analytics
+		link spidering
+		HTML form auto completion, use scuzzle as a 'bot' to scrape further
+		
+	Suggest a feature!
+	Send me an email - zmcartor@gmail.com
+
+=How?=
+To install Scuzzle Scrape
+1. clone the git repo
+2. cd into the cloned repo dir
+3. run "bundle install" to install any missing dependencies.
+4. if everyone looks good, start the app with 'ruby app.rb'
+
+Enjoy using Scruzzle Scrape!
+
+_Z
