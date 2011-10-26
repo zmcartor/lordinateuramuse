@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title= App_settings.title
+    %link{:href => '/css/main.css', :rel => 'stylesheet', :type => 'text/css'}
+    %script{:type => "text/javascript",:src  => "https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"}
+
+  %body
+    #container
+      #header
+        #logo
+          %img{:src=>'/img/scuzzle.jpeg'}
+          %img{:src=>'/img/scrape.jpeg' , :class=>'logo_right'}
+          %h1
+            %a{:href => '/'}= App_settings.title
+      #content= yield
+      #footer
+        %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{App_settings.author} &mdash;"
