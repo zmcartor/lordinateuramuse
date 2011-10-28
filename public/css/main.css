@@ -76,6 +76,62 @@ border-width:5px;
 
 .share_button{
 	position:absolute;
-	left:0;
-	top:0;
+	left:5px;
+	top:5px;
+	background-color: #7FBF4D;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#7fbf4d), to(#63a62f));
+background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+background-image: linear-gradient(top, #7fbf4d, #63a62f);
+border: 1px solid #63A62F;
+border-bottom: 1px solid #5B992B;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-ms-border-radius: 3px;
+-o-border-radius: 3px;
+border-radius: 3px;
+-webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+-moz-box-shadow: inset 0 1px 0 0 #96ca6d;
+-ms-box-shadow: inset 0 1px 0 0 #96ca6d;
+-o-box-shadow: inset 0 1px 0 0 #96ca6d;
+box-shadow: inset 0 1px 0 0 #96ca6d;
+color: white;
+font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+line-height: 1;
+padding: 7px 0 8px 0;
+text-align: center;
+text-shadow: 0 -1px 0 #4C9021;
+}
+
+.share_button:hover{
+	position:absolute;
+	left:5px;
+	top:5px;
+	background-color: #CFBF4D;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#Cfbf4d), to(#63a62f));
+background-image: -webkit-linear-gradient(top, #Cfbf4d, #63a62f);
+background-image: -moz-linear-gradient(top, #Cfbf4d, #63a62f);
+background-image: -ms-linear-gradient(top, #Cfbf4d, #63a62f);
+background-image: -o-linear-gradient(top, #Cfbf4d, #63a62f);
+background-image: linear-gradient(top, #Cfbf4d, #63a62f);
+border: 1px solid #63A62F;
+border-bottom: 1px solid #5B992B;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-ms-border-radius: 3px;
+-o-border-radius: 3px;
+border-radius: 3px;
+-webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+-moz-box-shadow: inset 0 1px 0 0 #96ca6d;
+-ms-box-shadow: inset 0 1px 0 0 #96ca6d;
+-o-box-shadow: inset 0 1px 0 0 #96ca6d;
+box-shadow: inset 0 1px 0 0 #96ca6d;
+color: white;
+font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+line-height: 1;
+padding: 7px 0 8px 0;
+text-align: center;
+text-shadow: 0 -1px 0 #4C9021;
 }
