@@ -5,4 +5,5 @@
 
   -else 
   -@images.each do |m|
-    %img{:src=>m , :class=>'scuzz_img'}
+    %a{:href=>m}
+      %img{:src=>m, :class=>'scuzz_img'}
