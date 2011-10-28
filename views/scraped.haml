@@ -1,9 +1,11 @@
+%script{:src=>"/scripts/scrape.js"}
 %h1 #{@greeting}
 .img_grid
-  -if @images.empty?
-    Darn! No imgs on that page.
+-if @images.empty?
+ Darn! No imgs on that page.
 
-  -else 
-  -@images.each do |m|
-    %a{:href=>m}
-      %img{:src=>m, :class=>'scuzz_img'}
+-else 
+ -@images.each do |m|
+  .scuzz_img_block
+   %a{:href=>m}
+    %img{:src=>m, :class=>'scuzz_img'}
