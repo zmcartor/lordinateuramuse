@@ -1,0 +1,11 @@
+%script{:src=>"/scripts/recd.js"}
+%h1 #{@greeting}
+.img_grid
+-if @posts.empty?
+No images for today, why not scrape and find some?
+
+-else 
+ -@posts.each do |m|
+  .scuzz_img_block
+   %a{:href=>m.url}
+    %img{:src=>m.url, :class=>'scuzz_img'}

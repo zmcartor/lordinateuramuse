@@ -13,6 +13,7 @@
           %img{:src=>'/img/scrape.jpeg' , :class=>'logo_right'}
           %h1
             %a{:href => '/'}= App_settings.title
+            %a{:href =>'/recommended'} Recommended for today..
       #content= yield
       #footer
         %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{App_settings.author} &mdash;"

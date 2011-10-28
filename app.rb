@@ -39,10 +39,8 @@ set :port , 8080
 
 # root page
 get '/' do 
-
 	#show a list of days with content.
 	#show a page of all-time greats
-
 	haml :index
 end
 
@@ -83,31 +81,20 @@ get '/scraped' do
 	haml :scraped
 end
 
-post "/recommend" do 
+post "/recommend" do
 	today = Date.today.strftime "%m-%d-%Y"
 	hash = Digest::SHA1.hexdigest params[:url]
 	puts params[:url]
 
 	#TODO no duplicate posts
 	new_post = Post.new(:url=>params[:url] , :date_posted=>today, :info_hash=>hash, :votes=>0)
-	new_post.save	
+	new_post.save
 end
 
-
 get "/recommended"  do
-	type = params[:type]
-#to get stuff, do
-=begin
-p = Post.new
-p.field = blah
-p.save
-
-to find
-alls = Post.all :conditions =>{:url => something}
-=end
-
-	#1 = imgs
-	#2 = links
-	#3 = kitchen sink
-
+	#just recommened images for now. Could share other types of data in future
+	date = params[:date] || Date.today.strftime("%m-%d-%Y")
+	Post.all(:created_at => {'$gt' => 1.days.ago.midnight  } )
+	@posts = Post.all
+	haml :recommended
 end
