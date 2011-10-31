@@ -5,18 +5,22 @@ zmcartor@gmail.com
 
 
 =What?=
-	Scuzzle Scrape is a fun little web-scraper that performs analytics and other
-	fun operations on remote website content. Scuzzle runs on the Sinatra web framework:
+	Scuzzle Scrape is a fun little web-scraper that grabs images off the web and allows random strangers to recommened images and then upvote or downvote these images for a given day.
+
+Scuzzle runs on the Sinatra web framework:
 	http://www.sinatrarb.com/
 
-	Current feature littleist (10/26/2011)
-		Fetch all images from supplied website and rotate 90 degs. This allow easy viewing while in bed.
+	Current feature list (10/26/2011)
+	Scrape an arbitrary URL for images
+	recommend those images to ScuzzleScrape
+	View the list of images 'recommended for today' along with vote counts
 
 
 	Future Features
-		natural language analytics
-		link spidering
-		HTML form auto completion, use scuzzle as a 'bot' to scrape further
+		user accounts
+		recommendation engine
+		UI calendar to show 'recommended' by past days
+		
 
 Suggest a feature!
 Send me allown email - zmcartor@gmail.com
