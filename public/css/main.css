@@ -148,6 +148,18 @@ opacity: 0.9;
 -webkit-border-radius: 10px;
 text-align: center;
 width: 20px;
-height: 18px;
-margin: 2px;
+}
+
+.arrow{
+	position:absolute;
+}
+
+.down{
+	right:1px;
+	bottom:1px;
+}
+
+.up{
+	left: 1px;
+	bottom:1px;
 }
