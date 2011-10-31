@@ -94,15 +94,16 @@ end
 get "/recommended"  do
 	#just recommened images for now. Could share other types of data in future
 	date = params[:date] || Date.today.strftime("%m-%d-%Y")
-	Post.all(:created_at => {'$gt' => 1.days.ago.midnight, :order=>'votes'})
-	@posts = Post.all
+	@posts = Post.all(:created_at => {'$gt' => 1.days.ago.midnight},:order=>'votes DESC')
 	haml :recommended
 end
 
 post "/upvote" do
 	Post.increment({:url=>params[:url]}, :votes => 1)
+	puts 'OK'
 end
 
 post "/downvote" do
 	Post.decrement({:url=>params[:url]}, :votes => 1)
+	puts 'OK'
 end
