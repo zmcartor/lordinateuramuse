@@ -87,14 +87,22 @@ post "/recommend" do
 	puts params[:url]
 
 	#TODO no duplicate posts
-	new_post = Post.new(:url=>params[:url] , :date_posted=>today, :info_hash=>hash, :votes=>0)
+	new_post = Post.new(:url=>params[:url] , :date_posted=>today, :info_hash=>hash)
 	new_post.save
 end
 
 get "/recommended"  do
 	#just recommened images for now. Could share other types of data in future
 	date = params[:date] || Date.today.strftime("%m-%d-%Y")
-	Post.all(:created_at => {'$gt' => 1.days.ago.midnight  } )
+	Post.all(:created_at => {'$gt' => 1.days.ago.midnight})
 	@posts = Post.all
 	haml :recommended
+end
+
+post "/upvote" do
+	Post.increment({:url=>params[:url]}, :vote => 1)
+end
+
+post "/downvote" do
+	Post.decrement({:url=>params[:url]}, :vote => 1)
 end
