@@ -37,10 +37,7 @@ end
 
 set :port , 8080
 
-# root page
 get '/' do 
-	#show a list of days with content.
-	#show a page of all-time greats
 	haml :index
 end
 
@@ -53,14 +50,8 @@ get '/scraped' do
 		@url.insert(0,'http://')
 	end
 
-	#grab with mechanize
-	#likely need some better error checking around here.
-
 	Log.info("Going to "+@url)
 	agent = Mechanize.new
-
-	#catch any errors that may occur, could be more specific
-	#in handling
 
 	begin
 		agent.get @url do |page|
@@ -75,9 +66,6 @@ get '/scraped' do
 		halt haml(:broken)
 	end
 
-	#TODO other feature ideas
-	#for the whole scraped HTML: use page.body
-	#Ensure scraper isn't used as XSS/SQl injection bot
 	haml :scraped
 end
 
@@ -86,13 +74,11 @@ post "/recommend" do
 	hash = Digest::SHA1.hexdigest params[:url]
 	puts params[:url]
 
-	#TODO no duplicate posts
 	new_post = Post.new(:url=>params[:url] , :date_posted=>today, :info_hash=>hash)
 	new_post.save
 end
 
 get "/recommended"  do
-	#just recommened images for now. Could share other types of data in future
 	date = params[:date] || Date.today.strftime("%m-%d-%Y")
 	@posts = Post.all(:created_at => {'$gt' => 1.days.ago.midnight},:order=>'votes DESC')
 	haml :recommended

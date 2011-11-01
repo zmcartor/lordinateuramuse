@@ -15,6 +15,13 @@ Scuzzle runs on the Sinatra web framework:
 	recommend those images to ScuzzleScrape
 	View the list of images 'recommended for today' along with vote counts
 
+	Current TODOs
+	show a list of days with content.
+	show a page of all-time greats
+	more specific web crawl error handling
+	filter XSS/SQLi strings from crawl query
+	filter duplicate recommendations
+	
 
 	Future Features
 		user accounts
