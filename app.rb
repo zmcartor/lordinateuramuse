@@ -72,7 +72,6 @@ end
 post "/recommend" do
 	today = Date.today.strftime "%m-%d-%Y"
 	hash = Digest::SHA1.hexdigest params[:url]
-	puts params[:url]
 
 	new_post = Post.new(:url=>params[:url] , :date_posted=>today, :info_hash=>hash)
 	new_post.save
