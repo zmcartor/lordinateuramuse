@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= App_settings.title
+    %title= APP_SETTINGS.title
     %link{:href => '/css/main.css', :rel => 'stylesheet', :type => 'text/css'}
     %script{:type => "text/javascript",:src  => "https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"}
 
@@ -12,6 +12,6 @@
           %img{:src=>'/img/scuzzle.jpeg'}
           %img{:src=>'/img/scrape.jpeg' , :class=>'logo_right'}
           %h1
-            %a{:href => '/'}= App_settings.title
+            %a{:href => '/'}= APP_SETTINGS.title
             %a{:href =>'/recommended'} Recommended for today..
       #content= yield

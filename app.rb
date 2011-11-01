@@ -19,7 +19,7 @@ configure do
 	enable :logging
 
 	#setup some app variables here for fun..
-	App_settings = OpenStruct.new(
+	APP_SETTINGS = OpenStruct.new(
 		:title=>'ScuzzleScrape',
 		:author=>'@zmcartor'
 	)
