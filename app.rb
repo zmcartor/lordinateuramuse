@@ -70,16 +70,13 @@ class Scuzzle < Sinatra::Base
 	end
 
 	post "/recommend" do
-		today = Date.today.strftime "%m-%d-%Y"
 		hash = Digest::SHA1.hexdigest params[:url]
-
-		new_post = Post.new(:url=>params[:url] , :date_posted=>today, :info_hash=>hash)
-		new_post.save
+		Post.add(params[:url])
 	end
 
 	get "/recommended"  do
 		date = params[:date] || Date.today.strftime("%m-%d-%Y")
-		@posts = Post.all(:created_at => {'$gt' => 1.days.ago.midnight},:order=>'votes DESC')
+		@posts = Post.recommended_today
 		haml :recommended
 	end
 
