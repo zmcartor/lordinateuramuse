@@ -4,15 +4,13 @@ require 'rspec/autorun'
 require 'test/unit'
 require 'spec_helper'
 
-set :environment, :test
-
 describe 'Scuzzle Scrape index' do
 	before(:each) do
-		set :views => File.join(File.dirname(__FILE__), "..", "views")
+	
 	end
 
 	def app
-		@app ||= Sinatra::Application
+		Scuzzle
 	end
 
 	it "should show a search box on /" do
@@ -21,7 +19,7 @@ describe 'Scuzzle Scrape index' do
 	end
 
 	it "should throw an error with a non URL" do
-		get '/scraped?url=fffff'
+		get '/scraped', :url => 'flufffluff'
 		last_response.body.should include "Arghh ya broke it!"
 	end
 end
@@ -30,7 +28,7 @@ end
 describe "Scuzzle picture recommend" do
 
 	it "show pictures from Reddpics" do
-		get "/scraped?url=reddpics.com"
+		get "/scraped" , :url=>'http://reddpics.com'
 		last_response.body.should include "<div class='scuzz_img_block'>"
 	end
 
